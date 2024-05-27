@@ -1,0 +1,144 @@
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    position: relative;
+    margin-top: 170px;
+}
+
+.hero-image {
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+.animated-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(33,212,253,1) 0%, rgba(183,33,255,1) 100%);
+    background-size: 200% 200%;
+    animation: lineAnimation 3s linear infinite;
+    border-radius: 50%;
+}
+
+@keyframes lineAnimation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.typing-effect {
+    text-align: center;
+}
+
+.typing-effect .line1 {
+    display: block;
+    font-size: 2.5em;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .08em solid #21D4FD;
+    animation: typing 2s steps(22, end), blink-caret .75s step-end infinite;
+    background: linear-gradient(69deg, #21D4FD 0%, #B721FF 82%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typing-effect .line2 {
+    display: block;
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-top: 10px;
+    color: white;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #21D4FD; }
+}
+
+.hero p {
+    width: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.hero-action {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.hero-connect {
+    padding: 25px 45px;
+    border-radius: 50px;
+    background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.hero-connect:hover {
+    border: 2px solid white;
+}
+
+.hero-resume {
+    padding: 25px 45px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.hero-resume:hover {
+    border-color: #B415FF;
+}
+
+@media (max-width: 768px) {
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
+    .typing-effect .line1, .typing-effect .line2 {
+        font-size: 25px;
+    }
+    .hero p {
+        width: 70%;
+        font-size: 18px;
+        line-height: 32px;
+        margin: 10px 0px;
+    }
+    .hero-action {
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+    .hero-connect {
+        padding: 20px 30px;
+        border-radius: 40px;
+    }
+    .hero-resume {
+        padding: 20px 30px;
+        border-radius: 40px;   
+    }
+}
