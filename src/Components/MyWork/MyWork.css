@@ -253,8 +253,13 @@
   }
   
   .mywork-container {
+<<<<<<< HEAD
     grid-template-columns: 1fr;
     gap: 30px;
+=======
+      grid-template-columns: 1fr;
+      gap: 30px;
+>>>>>>> origin/main
   }
   
   .work-item {
@@ -265,6 +270,7 @@
     width: 100%;
     height: 100%;
   }
+<<<<<<< HEAD
   
   .work-description h3 {
     font-size: 24px;
@@ -275,6 +281,16 @@
     font-size: 18px;
   }
   
+=======
+  .work-description h3 {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.work-description p {
+  font-size: 5px;
+}
+>>>>>>> origin/main
   .mywork-showmore {
     padding: 10px 30px;
     font-size: 18px;
