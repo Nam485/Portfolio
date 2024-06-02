@@ -35,13 +35,13 @@ const Contact = () => {
 
     return (
         <div id="contact" className='contact'>
-            <div className="contact-title">
-            <h1>Contact Us</h1>
-        <div className="underline underline-1"></div>
-        <div className="underline underline-2"></div>
-            </div>
+            
             <div className="contact-section">
                 <div className="contact-left">
+                <div className="contact-title">
+            <h1>Contact <span>Us</span></h1>
+            </div>
+            <div className='contact-left-below'>
                     <h1>Let's talk</h1>
                     <p>In brief, I'd love to hear from you. Whether you have a question about my work, want to collaborate on a project, or just want to say hi, my inbox is always open. Drop me a message and I'll get back to you as soon as possible.</p>
                     <div className="contact-details">
@@ -54,6 +54,7 @@ const Contact = () => {
                         <div className="contact-detail">
                             <img src={location_icon} alt="" /><p>Malviya Nagar, Jaipur</p>
                         </div>
+                    </div>
                     </div>
                 </div>
                 <form onSubmit={onSubmit}  id='formId' className="contact-right">

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import logo2 from '../../assets/logo3.png';
 import menu_close from '../../assets/menu_close.svg';
@@ -7,8 +7,11 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const [scrollDirection, setScrollDirection] = useState(null);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const menuRef = useRef();
-  
+  const navbarRef = useRef();
+
   const openMenu = () => {
     menuRef.current.style.right = '0';
   }
@@ -17,8 +20,34 @@ const Navbar = () => {
     menuRef.current.style.right = '-350px';
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
+  useEffect(() => {
+    if (scrollDirection === "up" && lastScrollY > 50) {
+      navbarRef.current.classList.add('navbar-scrolled-up');
+    } else {
+      navbarRef.current.classList.remove('navbar-scrolled-up');
+    }
+  }, [scrollDirection, lastScrollY]);
+
   return (
-    <div className='navbar'>
+    <div ref={navbarRef} className='navbar'>
       <img src={logo2} alt="logo" className='navbar-logo' />
       <img src={menu_open} onClick={openMenu} alt="open menu" className='nav-mob-open' />
       <ul ref={menuRef} className="nav-menu">
@@ -28,10 +57,11 @@ const Navbar = () => {
         <li><AnchorLink className='anchor-link' offset={50} href='#services'><p onClick={() => setMenu("services")}>Services</p></AnchorLink></li>
         <li><AnchorLink className='anchor-link' offset={50} href='#work'><p onClick={() => setMenu("work")}>Portfolio</p></AnchorLink></li>
         <li><AnchorLink className='anchor-link' offset={50} href='#timeline'><p onClick={() => setMenu("timeline")}>Education</p></AnchorLink></li>
+        <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p onClick={() => setMenu("contact")}>Contact</p></AnchorLink></li>
       </ul>
-      <div className="nav-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
     </div>
   )
 }
 
 export default Navbar;
+  

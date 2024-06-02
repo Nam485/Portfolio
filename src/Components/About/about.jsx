@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import CountUp from 'react-countup'; // Correct import statement
+import CountUp from 'react-countup';
+import { FaCss3Alt, FaDatabase, FaHtml5, FaJava, FaJs, FaReact } from 'react-icons/fa';
 import nam from '../../assets/nam.jpg';
 import './About.css';
 
@@ -45,13 +46,9 @@ const About = () => {
 
   return (
     <div id="about" className="about">
-      <div className="about-title">
-        <h1>About me</h1>
-        <div className="underline underline-1"></div>
-        <div className="underline underline-2"></div>
-      </div>
       <div className="about-sections">
         <div className="about-left" ref={aboutLeftRef}>
+          <h1>About <span>Me</span></h1>
           <img src={nam} alt="Namit Goyal" />
         </div>
         <div className="about-right" ref={aboutRightRef}>
@@ -60,17 +57,51 @@ const About = () => {
             <p>In every project, I aim to contribute meaningfully and achieve remarkable outcomes. My dedication and enthusiasm drive me to excel and make a positive impact.</p>
           </div>
           <div className="about-skills">
-            <div className="about-skill"><p>HTML & CSS</p><hr style={{ width: "70%" }} /></div>
-            <div className="about-skill"><p>JAVASCRIPT</p><hr style={{ width: "60%" }} /></div>
-            <div className="about-skill"><p>REACT JS</p><hr style={{ width: "65%" }} /></div>
-            <div className="about-skill"><p>C & JAVA</p><hr style={{ width: "50%" }} /></div>
-            <div className="about-skill"><p>SQL</p><hr style={{ width: "45%" }} /></div>
+            <h2>Skills</h2>
+            <div className="skills-grid">
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaHtml5 color="#E44D26" size={50} />
+                </div>
+                <p>HTML5</p>
+              </div>
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaCss3Alt color="#1572B6" size={50} />
+                </div>
+                <p>CSS3</p>
+              </div>
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaJs color="#F0DB4F" size={50} />
+                </div>
+                <p>JavaScript</p>
+              </div>
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaReact color="#61DBFB" size={50} />
+                </div>
+                <p>React</p>
+              </div>
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaJava color="#007396" size={50} />
+                </div>
+                <p>Java</p>
+              </div>
+              <div className="skill-icon">
+                <div className="icon-box">
+                  <FaDatabase color="#4DB33D" size={50} />
+                </div>
+                <p>SQL</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="about-achievements">
         <div className="about-achievement">
-          <h1> <CountUp end={1}/>+</h1>
+          <h1> <CountUp end={2}/>+</h1>
           <p>Years of Experience</p>
         </div>
         <hr />

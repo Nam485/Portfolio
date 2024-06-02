@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importing icons from react-icons
 import logo2 from '../../assets/logo3.png';
 import user_icon from '../../assets/user_icon.svg';
 import './Footer.css';
@@ -22,9 +23,9 @@ const Footer = () => {
       <div className="footer-bottom">
         <p className="footer-bottom-left">© 2024 All right reserved</p>
         <div className="footer-bottom-right">
-          <a href="https://www.linkedin.com/in/namit-goyal-743315227/"><img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn" /></a>
-          <a href="https://github.com/Nam485"><img src="https://img.icons8.com/fluent/48/000000/github.png" alt="GitHub" /></a>
-          <a href="https://www.instagram.com/goyal_namit/?next=%2F"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram" /></a>
+          <a href="https://www.linkedin.com/in/namit-goyal-743315227/"><FaLinkedin size={30} /></a>
+          <a href="https://github.com/Nam485"><FaGithub size={30} /></a>
+          <a href="https://www.instagram.com/goyal_namit/?next=%2F"><FaInstagram size={30} /></a>
         </div>
       </div>
     </div>
