@@ -172,4 +172,15 @@
   .about-left img {
     display: none; /* Hide image on mobile */
   }
+  .about-achievements{
+    justify-content: space-between;
+  }
+  .about-achievement h1{
+    font-size: 34px;
+  }
+  .about-achievement p{
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+  }
 }
