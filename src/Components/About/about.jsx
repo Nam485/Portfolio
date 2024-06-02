@@ -101,8 +101,8 @@ const About = () => {
       </div>
       <div className="about-achievements">
         <div className="about-achievement">
-          <h1> <CountUp end={2}/>+</h1>
-          <p>Years of Experience</p>
+          <h1> <CountUp end={10}/>+</h1>
+          <p>Months of Experience</p>
         </div>
         <hr />
         <div className="about-achievement">
