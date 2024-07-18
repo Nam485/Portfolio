@@ -1,138 +1,148 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-left: 20px; /* Added padding for better alignment */
-    padding-right: 20px; /* Added padding for better alignment */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: #161513;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-left: 20px; /* Added padding for better alignment */
+  padding-right: 20px; /* Added padding for better alignment */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #161513;
+  transition: transform 0.3s ease-in-out; /* Added transition for smooth scrolling */
+  margin: 0;
+}
+
+.navbar-scrolled-up {
+  transform: translateY(0); /* Show navbar when scrolling up */
+}
+
+.navbar-scrolled-down {
+  transform: translateY(-100%); /* Hide navbar when scrolling down */
 }
 
 .navbar-logo {
-    height: 60px;
-    width: 60px;
-    filter: brightness(2000%);
+  height: 60px;
+  width: 60px;
+  filter: brightness(2000%);
 }
 
 .nav-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    list-style: none;
-    gap: 50px;
-    font-size: 20px;
-    margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  list-style: none;
+  gap: 50px;
+  font-size: 20px;
+  margin-right: 50px;
 }
 
 .nav-menu li {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
 }
 
 .nav-menu li p::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #21D4FD;
-    transition: width 0.5s;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #21d4fd;
+  transition: width 0.5s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
 }
 
 .nav-menu li p:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .nav-mob-close {
-    display: none;
+  display: none;
 }
 
 .anchor-link {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-mob-open {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 1024px) {
-    .nav-menu {
-        gap: 30px;
-        font-size: 18px;
-        margin-right: 30px;
-    }
+  .nav-menu {
+    gap: 30px;
+    font-size: 18px;
+    margin-right: 30px;
+  }
 
-    .nav-menu li {
-        font-size: 18px;
-    }
+  .nav-menu li {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        justify-content: space-between;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+  .navbar {
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-    .nav-menu {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-        background-color: #1F0016;
-        position: fixed;
-        top: 0;
-        right: -100%; /* Adjusted to -100% */
-        width: 300px;
-        height: 100%;
-        z-index: 2;
-        transition: right 0.3s ease-in-out;
-        padding-top: 60px; /* Added padding for better alignment */
-    }
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    background-color: #1f0016;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Adjusted to -100% */
+    width: 300px;
+    height: 100%;
+    z-index: 2;
+    transition: right 0.3s ease-in-out;
+    padding-top: 60px; /* Added padding for better alignment */
+  }
 
-    .nav-menu li {
-        font-size: 24px;
-        padding-left: 20px;
-        flex-direction: row;
-        gap: 10px;
-    }
+  .nav-menu li {
+    font-size: 24px;
+    padding-left: 20px;
+    flex-direction: row;
+    gap: 10px;
+  }
 
-    .nav-mob-open {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        cursor: pointer;
-    }
+  .nav-mob-open {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
 
-    .nav-mob-close {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        cursor: pointer;
-        width: 30px;
-    }
+  .nav-mob-close {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    width: 30px;
+  }
 
-    .nav-menu.active {
-        right: 0;
-    }
+  .nav-menu.active {
+    right: 0;
+  }
 }
 
 /* Added styling for .nav-mob-open and .nav-mob-close buttons */
-.nav-mob-open, .nav-mob-close {
-    font-size: 24px;
-    color: white;
+.nav-mob-open,
+.nav-mob-close {
+  font-size: 24px;
+  color: white;
 }

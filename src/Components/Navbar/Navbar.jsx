@@ -41,7 +41,9 @@ const Navbar = () => {
   useEffect(() => {
     if (scrollDirection === "up" && lastScrollY > 50) {
       navbarRef.current.classList.add('navbar-scrolled-up');
-    } else {
+      navbarRef.current.classList.remove('navbar-scrolled-down');
+    } else if (scrollDirection === "down") {
+      navbarRef.current.classList.add('navbar-scrolled-down');
       navbarRef.current.classList.remove('navbar-scrolled-up');
     }
   }, [scrollDirection, lastScrollY]);
@@ -64,4 +66,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-  
