@@ -12,7 +12,7 @@ const Timeline = () => {
           <div className="contents">
             <div className="box">
               <h4>2021 - 2025</h4>
-              <h3>BTech</h3>
+              <h3>CSE, B.Tech</h3>
               <h3>Birla Institute of Technology, Mesra</h3>
               <p>
                 I am currently pursuing a Bachelor's degree in Computer Science and Engineering at BIT, Mesra. I have completed 5 semesters and have a CGPA of 8.40. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others.
@@ -41,6 +41,17 @@ const Timeline = () => {
             <h2>EXPERIENCE</h2>
           </header>
           <div className="contents">
+          <div className="box">
+              <h4>06/2024 - 09/2024</h4>
+              <h3>Software Developer Intern</h3>
+              <h3>MetaFox Technologies</h3>
+              <p>
+              ◦ Led the development of 6 innovative web and software projects, handling both frontend and backend tasks.<br/>
+              ◦ Collaborated actively with the project manager and a team of 5 dedicated developers, reducing project delivery time by 25%.<br/>
+              ◦ Optimized and thoroughly refactored codebases, significantly improving overall performance and scalability by 15%.<br/>
+              ◦ Tackled 12 complex web application challenges, significantly strengthening and enhancing technical expertise.<br/>
+              </p>
+            </div>
             <div className="box">
               <h4>11/2023 - 01/2024</h4>
               <h3>Frontend Intern</h3>
